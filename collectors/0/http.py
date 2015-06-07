@@ -21,7 +21,7 @@ def collect():
       response = requests.get(url)
       latency = response.elapsed.total_seconds() * 1000
       print("%s %i %f" % (metric, ts, latency))
-  except e:
+  except Exception as e:
     utils.err("error: something wrong happened in http: %s" % e)
 
 def main(args):
